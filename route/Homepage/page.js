@@ -1,7 +1,7 @@
 "use client";
 
 import WatchAndBuy from "@/components/WatchAndBuy/page";
-
+import NewLunches from "@/components/PerfumeItems/page";
 export default function HomePage() {
   return (
     <section>
@@ -19,6 +19,11 @@ export default function HomePage() {
       <div className="mt-10">
         <WatchAndBuy />
       </div>
+      {/* New Launches Section */}
+      <div className="mt-10">
+        <NewLunches />
+      </div>
+
     </section>
   );
 }
