@@ -2,6 +2,11 @@
 
 import WatchAndBuy from "@/components/WatchAndBuy/page";
 import NewLunches from "@/components/PerfumeItems/page";
+import BrandMarquee from "@/components/BannerLogo/page";
+import TestimonialSlider from "@/components/Review/page";
+import Whatsapp from "@/components/Whatsapp/page";
+import Instagram from "@/components/OurInstagram/page"
+
 export default function HomePage() {
   return (
     <section>
@@ -23,7 +28,21 @@ export default function HomePage() {
       <div className="mt-10">
         <NewLunches />
       </div>
-
+      {/* Testimonials Section */}
+      <div className="mt-10">
+        <TestimonialSlider />
+      </div>
+      <div className="mt-10">
+        <Instagram />
+      </div>
+      {/* Brand Marquee Section */}
+      <div className="mt-10">
+        <BrandMarquee />
+      </div>
+   
+      {/* WhatsApp Floating Button */}
+        <Whatsapp />
+      
     </section>
   );
 }

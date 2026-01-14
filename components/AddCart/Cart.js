@@ -24,12 +24,12 @@ export default function Cart({ open, onClose }) {
 
         {/* Welcome Banner */}
         <div className="bg-black text-white text-sm text-center py-2">
-          Welcome to Fraganote Store 👋
+          Welcome to Coxfuture Store 👋
         </div>
 
         {/* Offer */}
         <div className="px-4 py-3 text-center text-sm border-b">
-          <b>Gift Wrap + Free Sample + Christmas Goodies</b> + Fraganote Tote Bag  
+          <b>Gift Wrap + Free Sample + Christmas Goodies</b> + Coxfuture Tote Bag  
           <div className="flex justify-between mt-2 text-sm">
             <span className="line-through text-gray-400">₹998.00</span>
             <span className="font-semibold">₹1,498.00</span>

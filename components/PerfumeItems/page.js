@@ -38,7 +38,7 @@ const newLaunches = [
   },
   {
     id: 4,
-    title: "DISCOVERY SET: A ROYAL STORY BY FRAGANOTE",
+    title: "DISCOVERY SET: A ROYAL STORY BY Coxfuture",
     category: "Discovery Set",
     price: "999",
     mrp: "1,699",
