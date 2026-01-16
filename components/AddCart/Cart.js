@@ -1,9 +1,12 @@
 "use client";
 
 import Image from "next/image";
+import { useCart } from "@/context/CartContext";
+
 
 export default function Cart({ open, onClose }) {
   if (!open) return null;
+const { cartItems, removeFromCart, updateQty } = useCart();
 
   return (
     <>
@@ -52,28 +55,28 @@ export default function Cart({ open, onClose }) {
         <div className="flex-1 overflow-y-auto px-4 py-3 space-y-4">
 
           {/* Item */}
-          <div className="flex gap-3">
-            <Image
-              src="/perfume.png"
-              alt="Perfume"
-              width={60}
-              height={60}
-              className="rounded"
-            />
+          {cartItems.map((item) => (
+  <div key={item.id} className="flex gap-3">
+    <Image src={item.image} alt={item.title} width={60} height={60} />
 
-            <div className="flex-1">
-              <h4 className="text-sm font-medium">Lavender Tease 50ML</h4>
-              <p className="text-green-600 text-xs">(44% OFF)</p>
-              <p className="font-semibold">₹1,899.00</p>
+    <div className="flex-1">
+      <h4 className="text-sm font-medium">{item.title}</h4>
+      <p className="font-semibold">₹{item.price}</p>
 
-              <div className="flex items-center gap-2 mt-2">
-                <button className="border px-2">-</button>
-                <span>2</span>
-                <button className="border px-2">+</button>
-                <button className="ml-auto text-red-500">🗑</button>
-              </div>
-            </div>
-          </div>
+      <div className="flex items-center gap-2 mt-2">
+        <button onClick={() => updateQty(item.id, item.qty - 1)}>-</button>
+        <span>{item.qty}</span>
+        <button onClick={() => updateQty(item.id, item.qty + 1)}>+</button>
+        <button
+          onClick={() => removeFromCart(item.id)}
+          className="ml-auto text-red-500"
+        >
+          🗑
+        </button>
+      </div>
+    </div>
+  </div>
+))}
 
           {/* Free Goodies */}
           <div className="flex gap-3 items-center">

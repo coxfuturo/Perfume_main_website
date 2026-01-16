@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { useCart } from "@/context/CartContext";
 
 const productsData = [
     {
@@ -68,6 +69,8 @@ const productsData = [
 export default function CommonCartItems() {
     const [sortOpen, setSortOpen] = useState(false);
     const [sortBy, setSortBy] = useState("Featured");
+const { addToCart } = useCart();
+
 
     const sortedProducts = [...productsData].sort((a, b) => {
         switch (sortBy) {
@@ -185,9 +188,13 @@ export default function CommonCartItems() {
                             </span>
                         </div>
 
-                        <button className="mt-4 w-full border border-black py-3 text-lg hover:bg-black hover:text-white transition">
-                            Add to cart
+                        <button
+                        onClick={() => addToCart(item)}
+                        className="mt-4 w-full border border-black py-3 text-lg hover:bg-black hover:text-white transition"
+                        >
+                        Add to cart
                         </button>
+
 
                     </div>
                 ))}
