@@ -1,6 +1,11 @@
+'use client';
 import Link from "next/link";
+import { useEffect } from "react";
 
 export default function Footer() {
+const scrollTop = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
   return (
     <footer
       className="relative bg-cover bg-center text-white"
@@ -18,9 +23,9 @@ export default function Footer() {
         <div>
           <h4 className="text-lg font-semibold mb-4">Support</h4>
           <ul className="space-y-2 text-sm">
-            <li><Link href="/about-us">About Us</Link></li>
-            <li><Link href="/terms">Terms & Services</Link></li>
-            <li><Link href="/contact">Contact</Link></li>
+            <li><Link onClick={scrollTop} href="/Support/About">About Us</Link></li>
+            <li><Link onClick={scrollTop} href="/terms">Terms & Services</Link></li>
+            <li><Link onClick={scrollTop} href="/contact">Contact</Link></li>
             <li className="flex items-center gap-1">
               ▶ <Link href="/grievances">For grievances</Link>
             </li>
@@ -57,10 +62,10 @@ export default function Footer() {
         <div>
           <h4 className="text-lg font-semibold mb-4">Orders and Shipping</h4>
           <ul className="space-y-2 text-sm">
-            <li><Link href="/privacy-policy">Privacy Policy</Link></li>
-            <li><Link href="/returns">Delivery & Returns Policy</Link></li>
-            <li><Link href="/shipping-policy">Shipping Policy</Link></li>
-            <li><Link href="/track-order">Track My Order</Link></li>
+            <li><Link onClick={scrollTop} href="/OrderAndShipping/PrivacyAndPolicy">Privacy Policy</Link></li>
+            <li><Link onClick={scrollTop} href="/returns">Delivery & Returns Policy</Link></li>
+            <li><Link onClick={scrollTop} href="/shipping-policy">Shipping Policy</Link></li>
+            <li><Link onClick={scrollTop} href="/track-order">Track My Order</Link></li>
           </ul>
         </div>
       </div>
